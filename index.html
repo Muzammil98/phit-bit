@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FIT BIT | Blood Pressure Checker</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+      }
+      #btn {
+        display: none;
+      }
+      #section-1 {
+        color: #333;
+        background: darkgray;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h2 {
+        font-size: 3.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+        padding: 0 2rem;
+      }
+      .div {
+        font-size: 2rem;
+      }
+      #section-2 {
+        color: #333;
+        background: steelblue;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="section-1">
+      <h2>FIT BIT</h2>
+
+      <p>
+        Checking Blood pressure of the patient through
+        <strong>Fit Bit</strong> and sending data live to the hospital. <br />
+        This is only sample/random BP data.
+      </p>
+
+      <button
+        id="btn"
+        onclick="document.getElementById('demo').innerHTML = getRndInteger(90,180); document.getElementById('demo-2').innerHTML = getRndInteger(60,120);"
+      >
+        Click Me
+      </button>
+      <br />
+      <span>Systotic/Diastotic:</span>
+      <div class="div">
+        <span id="demo"></span><span>/</span><span id="demo-2"></span>
+      </div>
+    </section>
+    <section id="section-2">
+      <h2>Blood Pressure Range</h2>
+      <p>
+        90/60 : LOW BP <br />
+        120/80 NORMAL BP <br />
+        140/90 : PREHYPERTENSION <br />
+        160/100 : <strong>EMERGENCY </strong> STAGE 1 High BP -Hypertention
+        <br />
+        180/120 : <strong>EMERGENCY </strong> STAGE 2 High BP -Hypertention
+      </p>
+    </section>
+    <script>
+      function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      setInterval(function() {
+        document.getElementById("btn").click();
+      }, 5000);
+      //       console.log(numbers_ranges(90, 60));
+      // console.log('===================');
+      // console.log(numbers_ranges(130, 90));
+      // console.log('===================');
+      // console.log(numbers_ranges(180, 120));
+      // console.log('===================');
+      // console.log(numbers_ranges(160, 100));
+      // console.log('===================');
+
+      // function numbers_ranges(x,y)
+      // {
+      //         if ((x >= 0 && x <= 90 && y >= 0 && y <= 60))
+      //             {
+      //            return 'Low Bp';
+      //             }
+      //         if ((x >= 90 && x <= 120 && y >= 60 && y <= 80))
+      //             {
+      //            return 'Normal Bp';
+      //             }
+      //         if ((x >= 120 && x <= 140 && y >= 80 && y <=90))
+      //            {
+      //            return 'Prehyper Bp';
+      //           }
+      //         if ((x >= 140 && x <= 160 && y >= 90 && y<=100))
+      //           {
+      //           return 'Hyper 1 Bp EMERGENCY';
+      //           }
+      //         if ((x > 160 && y > 100))
+      //           {
+      //           return 'Hyper 2 Bp EMERGENCY';
+      //           }
+
+      // }
+    </script>
+  </body>
+</html>
